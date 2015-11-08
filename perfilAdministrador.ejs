@@ -152,7 +152,31 @@
                             }
                             </script>
                         </td>                          
-                      </tr>                       
+                      </tr>
+      <tr>
+                            <td>Playlist 1:</td>
+                            <td>
+                                <!-- Trigger the modal with a button -->
+                        <input type="radio" name="playlist" value="<%= indexPlaylist0 %>" <%= checkCero %>>
+                        <a class="menu_link" data-toggle="modal" data-target="#myModal0" style="cursor: pointer; "><%= namePlaylist0 %></a>
+                            </td>
+                        </tr>
+      <tr>
+                            <td>Playlist 2:</td>
+                            <td>
+                                <!-- Trigger the modal with a button -->
+                        <input type="radio" name="playlist" value="<%= indexPlaylist1 %>" <%= checkUno %>>
+                        <a class="menu_link" data-toggle="modal" data-target="#myModal1" style="cursor: pointer; "><%= namePlaylist1 %></a>
+                            </td>
+                        </tr>
+      <tr>
+                            <td>Playlist 3:</td>
+                            <td>
+                                <!-- Trigger the modal with a button -->
+                        <input type="radio" name="playlist" value="<%= indexPlaylist2 %>" <%= checkDos %>>
+                        <a class="menu_link" data-toggle="modal" data-target="#myModal2" style="cursor: pointer; "><%= namePlaylist2 %></a>
+                            </td>
+                        </tr>
                     </tbody>
                   </table>
             </div>
@@ -165,5 +189,67 @@
 </form>
 </div>    
     
+
+<!-- Modal -->
+                      <div class="modal fade" id="myModal0" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><%= namePlaylist0 %></h4>
+                            </div>
+                            <div class="modal-body">
+                              <pre><%= cancionesPlaylist0 %></pre>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+      
+                    </div>
+                    </div>
+      <!-- Modal -->
+                      <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><%= namePlaylist1 %></h4>
+                            </div>
+                            <div class="modal-body">
+                              <pre><%= cancionesPlaylist1 %></pre>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+      
+                    </div>
+                    </div>
+      <!-- Modal -->
+                      <div class="modal fade" id="myModal2" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><%= namePlaylist2 %></h4>
+                            </div>
+                            <div class="modal-body">
+                              <pre><%= cancionesPlaylist2 %></pre>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+      
+                    </div>
+                    </div>
+
 </body>
 </html>

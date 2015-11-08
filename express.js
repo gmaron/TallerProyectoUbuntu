@@ -136,6 +136,7 @@ app.post("/registro", function (req, res){
                     var regDNI = req.body.dni;
                     var regTemp = req.body.temp;
                     var regLuz = req.body.luz;
+                    var regPlaylist = req.body.playlist;
                     saveUserDataBase(regNombre,regApellido,regDNI,regEmail,regPass,regTemp,regLuz);
                     sendEmail(regEmail,regNombre,regPass);
                     res.render(appDir+'/inicio.ejs',{errorMessage:"",
@@ -380,8 +381,8 @@ app.listen(port, function() {
 /*---------------------------Variables y funciones para la Base de Datos--------------*/
 
 
-var ipDataBase = '192.168.188.128'; 	// ip de la base de datos
-var usrDataBase = 'root';         // nombre de usuario
+var ipDataBase = '192.168.0.10'; 	// ip de la base de datos
+var usrDataBase = 'milton';         // nombre de usuario
 var passDataBase = 'milton';        // contrasena
 var nameDataBase = 'tp2';           // nombre de la base de datos
 
@@ -773,7 +774,9 @@ function getPassword(passConEnter){
 var exec = require('child_process').exec;
 var child;
 var evento = "/dev/input/event1";
-var ejecutarTeclas = "cd "+appDir+"; ./teclado "+evento;
+var gcc = "gcc -o teclado teclado.c";
+var perm = "chmod 777 teclado";
+var ejecutarTeclas = "cd "+appDir+"; "+gcc+";"+perm+";  ./teclado "+evento;
 child = exec(ejecutarTeclas, function (error, stdout, stderr) {
   console.log('stdout: ' + stdout);
   console.log('stderr: ' + stderr);
@@ -781,6 +784,7 @@ child = exec(ejecutarTeclas, function (error, stdout, stderr) {
     console.log('exec error: ' + error);
   }
 });
+
 
 function tempActual (){
     var text = "";
@@ -832,6 +836,7 @@ setInterval(function(){
                     var registrado = 0;
                     var dBtemp = content[0].temp;
                     var dBluz = content[0].luz;
+                    var dbIdPlaylist = content[0].idPlaylist;
                     console.log("Usuario: "+content[0].email);
                     recoveryAllAuditoria(function(err,content){
                         for (var i = 0; i < content.length ; i++){
@@ -846,6 +851,9 @@ setInterval(function(){
                                 saveAuditoriaDataBase(dBusr);
                                 hayUnoAdentro = 1;
                                 console.log("DISFRUTE SU ESTADIA");  
+                                request(dirMusic+"musicOn?num="+dbIdPlaylist, function(error, response, body) {
+                                    
+                                });
                                 console.log("Ambiente a acondicionar -> Temperatura: "+dBtemp+" Luz:"+dBluz);
                                 simuladorSensores(dBtemp,dBluz);
                             }else{
@@ -855,6 +863,7 @@ setInterval(function(){
                         else{
                             hayUnoAdentro = 0;
                             clearInterval(intervalSensores);
+                            request(dirMusic+"musicOff", function(error, response, body) {});
                             console.log("MUCHAS GRACIAS. VUELVA PRONTOS");
                         }                                                
                     });                    

@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 
 var request = require("request");
 var portMusic = "8000";
-var ipMusic = "192.168.0.10";
+var ipMusic = "192.168.0.9";
 var dirMusic = "http://"+ipMusic+":"+portMusic+"/";
 
 var cancionesPlayList0 = "";
@@ -45,45 +45,20 @@ app.get("/", function (req, res) {
         setTimeout(function(){
             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                 cancionesPlayList0 = body;
-            });    
-            next();
-        },100);
-    })
-    .then(function(next){
-        setTimeout(function(){
-           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+            });
+             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                 nombrePlaylist0 = body;
             });    
-            next();
-        },100);
-    })
-    .then(function(next){
-        setTimeout(function(){
-            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                 cancionesPlayList1 = body;
-            });    
-            next();
-        },100);
-    })
-    .then(function(next){
-        setTimeout(function(){
-           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+            });   
+            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                 nombrePlaylist1 = body;
-            });    
-            next();
-        },100);
-    })
-    .then(function(next){
-        setTimeout(function(){
+            }); 
             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                 cancionesPlayList2 = body;
             });    
-            next();
-        },100);
-    })
-    .then(function(next){
-        setTimeout(function(){
-           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                 nombrePlaylist2 = body;
             });    
             next();
@@ -121,45 +96,20 @@ app.post("/registro", function (req, res){
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
@@ -210,45 +160,20 @@ app.post("/registro", function (req, res){
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
@@ -283,6 +208,7 @@ app.post("/log", function(req, res) {
     var checkCero = "";
     var checkUno = "";
     var checkDos = "";
+    var inside = "0";
     recoveryUser(req.body.email,req.body.pass,function (err,content){
     if (err){
         console.log(err);
@@ -302,45 +228,20 @@ app.post("/log", function(req, res) {
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
@@ -360,7 +261,23 @@ app.post("/log", function(req, res) {
                             }
                             next();
                         },100);
-                    })
+                    })  //checked
+                    .then(function(next){
+                          setTimeout(function(){
+                           recoveryAuditoriaNULL(function(err,content){
+                                 if (err)
+                                     console.log(err)
+                                 else{
+                                     if (content != null){                                      
+                                         if(dBemail == content[0].email){
+                                             inside= "1";
+                                          }
+                                     }
+                                 }
+                              });
+                            next();
+                          },100); 
+                    })  //inside
                     .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/perfilUsuario.ejs', {  userName:dBnombre,
@@ -382,12 +299,13 @@ app.post("/log", function(req, res) {
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    }); //Render del perfil usuario
                 
                 }else{
                 var dBemail = content[0].email;  
@@ -398,54 +316,29 @@ app.post("/log", function(req, res) {
                 var dBluz = content[0].luz;
                 var dBpass = content[0].password; 
                 var dbPlaylist = content[0].idPlaylist;
-                    sequence.then(function(next){
+                   sequence.then(function(next){
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
                         },100);
-                    })
+                    })  //playlist
                     .then(function(next){
                         setTimeout(function(){
                             if (parseInt(dbPlaylist,10) == parseInt(dbNumPlay0,10)){
@@ -460,7 +353,23 @@ app.post("/log", function(req, res) {
                             }
                             next();
                         },100);
-                    })
+                    })         //checked
+                    .then(function(next){
+                          setTimeout(function(){
+                           recoveryAuditoriaNULL(function(err,content){
+                                 if (err)
+                                     console.log(err)
+                                 else{
+                                     if (content != null){                                      
+                                         if(dBemail == content[0].email){
+                                             inside= "1";
+                                          }
+                                     }
+                                 }
+                              });
+                            next();
+                          },100);
+                    })         //inside
                     .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/perfilAdministrador.ejs', {  userName:dBnombre,
@@ -482,62 +391,38 @@ app.post("/log", function(req, res) {
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    });        //render perfil Administrador
             }
         }else{
             sequence.then(function(next){
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
                         },100);
-                    })
+                    })  //playlist
                     .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/inicio.ejs', {errorMessage: "Usuario/Contrasena invalida", 
@@ -556,7 +441,7 @@ app.post("/log", function(req, res) {
                         next();
                         },100);
 
-                    });
+                    }); //render del inicio
         }
     }
 }); });
@@ -592,6 +477,7 @@ app.post("/historico",function(req,res){
 });
 
 app.post("/perfil",function(req,res){
+    var inside = "0";
     recoveryUser(emailAdmin,claveAdmin,function (err,content){
     if (err){
         console.log(err);
@@ -612,50 +498,25 @@ app.post("/perfil",function(req,res){
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
                         },100);
-                    })
+                    })  //playlist
                     .then(function(next){
                         setTimeout(function(){
                             if (parseInt(dbPlaylist,10) == parseInt(dbNumPlay0,10)){
@@ -670,7 +531,23 @@ app.post("/perfil",function(req,res){
                             }
                             next();
                         },100);
-                    })
+                    })         //checked
+                    .then(function(next){
+                          setTimeout(function(){
+                           recoveryAuditoriaNULL(function(err,content){
+                                 if (err)
+                                     console.log(err)
+                                 else{
+                                     if (content != null){                                      
+                                         if(dBemail == content[0].email){
+                                             inside= "1";
+                                          }
+                                     }
+                                 }
+                              });
+                            next();
+                          },100);
+                    })         //inside
                     .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/perfilAdministrador.ejs', {  userName:dBnombre,
@@ -692,12 +569,13 @@ app.post("/perfil",function(req,res){
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    });        //render de administrador
             
             }else{
                 console.log("Error de acceso en base de datos - app.post(\"/perfil\"....)");
@@ -708,9 +586,10 @@ app.post("/perfil",function(req,res){
 });
  
 app.post("/modPerfil",function (req,res){
-        var checkCero = "";
-        var checkUno = "";
-        var checkDos = "";
+      var checkCero = "";
+      var checkUno = "";
+      var checkDos = "";
+      var inside = "0";
       var regEmail = req.body.email;
       var regNombre = req.body.nom;
       var regApellido = req.body.ape;
@@ -725,59 +604,34 @@ app.post("/modPerfil",function (req,res){
              console.log (err);            
           }else{
             var dBid = content[0].id; //Como recupero por clave, siempre hace referencia al usuario que esta modificando el perfil
+            var dBplaylist = content[0].idPlaylist;
             if (regPass === claveAdmin){
                 if (regEmail === content[0].email){ //Quiere decir que el administrador no cambio el email
+                    
                     updateUserDataBase(regNombre,regApellido,regEmail,regTemp,regLuz,dBid,regPlaylist);
-                    
-                    
                      sequence.then(function(next){
                         setTimeout(function(){
                             request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                            });
+                             request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                 nombrePlaylist0 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                             request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                            });   
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                 nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                            }); 
                             request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 cancionesPlayList2 = body;
                             });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                            request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                 nombrePlaylist2 = body;
                             });    
                             next();
                         },100);
-                    })
+                    })  //playlist
                     .then(function(next){
                         setTimeout(function(){
                             if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
@@ -792,7 +646,26 @@ app.post("/modPerfil",function (req,res){
                             }
                             next();
                         },100);
-                    })
+                    })         //checked
+                    .then(function(next){
+                          setTimeout(function(){
+                           recoveryAuditoriaNULL(function(err,content){
+                                 if (err)
+                                     console.log(err)
+                                 else{
+                                     if (content != null){                                      
+                                         if(regEmail == content[0].email){
+                                             inside= "1";
+                                             if (dBplaylist != regPlaylist){
+                                                 request(dirMusic+"changePlaylist?num="+regPlaylist, function(error, response, body) {});
+                                             }
+                                          }
+                                     }
+                                 }
+                              });
+                            next();
+                          },100);
+                    })         //inside
                     .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/perfilAdministrador.ejs', {  userName:regNombre,
@@ -814,12 +687,13 @@ app.post("/modPerfil",function (req,res){
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    });        //Render de administrador 
                 }else{
                     recoveryUserByEmail(regEmail,function(err,contentEmail){
                         if (err){
@@ -827,54 +701,29 @@ app.post("/modPerfil",function (req,res){
                         }else{
                             if (content === null){ // no hay nadie con ese email
                                 updateUserDataBase(regNombre,regApellido,regEmail,regTemp,regLuz,dBid,regPlaylist);
-                                    sequence.then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                                    .then(function(next){
-                                        setTimeout(function(){
-                                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                                nombrePlaylist0 = body;
-                                            });    
-                                            next();
-                                        },100);
-                                    })
-                                    .then(function(next){
-                                        setTimeout(function(){
-                                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                                cancionesPlayList1 = body;
-                                            });    
-                                            next();
-                                        },100);
-                                    })
-                                    .then(function(next){
-                                        setTimeout(function(){
-                                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                                nombrePlaylist1 = body;
-                                            });    
-                                            next();
-                                        },100);
- })
-                                    .then(function(next){
-                                        setTimeout(function(){
-                                            request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                                cancionesPlayList2 = body;
-                                            });    
-                                            next();
-                                        },100);
- })
-                                    .then(function(next){
-                                        setTimeout(function(){
-                                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                                nombrePlaylist2 = body;
-                                            });    
-                                            next();
-                                        },100);
- })
+                                sequence.then(function(next){
+                                setTimeout(function(){
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        cancionesPlayList0 = body;
+                                    });
+                                     request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        nombrePlaylist0 = body;
+                                    });    
+                                     request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        cancionesPlayList1 = body;
+                                    });   
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        nombrePlaylist1 = body;
+                                    }); 
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        cancionesPlayList2 = body;
+                                    });    
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        nombrePlaylist2 = body;
+                                    });    
+                                    next();
+                                },100);
+                            })  //playlist
                                     .then(function(next){
                                         setTimeout(function(){
                                             if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
@@ -889,7 +738,26 @@ app.post("/modPerfil",function (req,res){
                                             }
                                             next();
                                         },100);
- })
+ })      //checked
+                                    .then(function(next){
+                                          setTimeout(function(){
+                                           recoveryAuditoriaNULL(function(err,content){
+                                                 if (err)
+                                                     console.log(err)
+                                                 else{
+                                                     if (content != null){                                      
+                                                         if(regEmail == content[0].email){
+                                                             inside= "1";
+                                                             if (dBplaylist != regPlaylist){
+                                                 request(dirMusic+"changePlaylist?num="+regPlaylist, function(error, response, body) {});
+                                                                }
+                                                          }
+                                                     }
+                                                 }
+                                              });
+                                            next();
+                                          },100);
+                                    })      //inside
                                     .then(function(next){
                                         setTimeout(function(){
                                             res.render(appDir + '/perfilAdministrador.ejs', {  userName:regNombre,
@@ -911,12 +779,13 @@ app.post("/modPerfil",function (req,res){
                                                                                     indexPlaylist2:dbNumPlay2,
                                                                                     checkCero:checkCero,
                                                                                     checkUno:checkUno,
-                                                                                    checkDos:checkDos   
+                                                                                    checkDos:checkDos,
+                                                                                    inside:inside
                                                                                });    
                                         next();
                                         },100);
 
- });
+ });     //render administrador
                 
                             }else{ //NO CAMBIO NINGUN CAMPO
                                 var dBemail = content[0].email;  
@@ -927,54 +796,29 @@ app.post("/modPerfil",function (req,res){
                                 
                                 
                                 sequence.then(function(next){
-                                    setTimeout(function(){
+                                setTimeout(function(){
                                     request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                         cancionesPlayList0 = body;
-                                    });    
-                                    next();
-                                },100);
-                            })
-                            .then(function(next){
-                                setTimeout(function(){
-                                   request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                    });
+                                     request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
                                         nombrePlaylist0 = body;
                                     });    
-                                    next();
-                                },100);
-                            })
-                            .then(function(next){
-                                setTimeout(function(){
-                                    request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                     request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                         cancionesPlayList1 = body;
-                                    });    
-                                    next();
-                                },100);
-                            })
-                            .then(function(next){
-                                setTimeout(function(){
-                                   request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                    });   
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
                                         nombrePlaylist1 = body;
-                                    });    
-                                    next();
-                                },100);
-                            })
-                            .then(function(next){
-                                setTimeout(function(){
+                                    }); 
                                     request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                         cancionesPlayList2 = body;
                                     });    
-                                    next();
-                                },100);
-                            })
-                            .then(function(next){
-                                setTimeout(function(){
-                                   request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
                                         nombrePlaylist2 = body;
                                     });    
                                     next();
                                 },100);
-                            })
-                            .then(function(next){
+                            })  //playlist
+                                .then(function(next){
                                 setTimeout(function(){
                                     if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
                                         checkCero = "checked="+true;
@@ -988,8 +832,27 @@ app.post("/modPerfil",function (req,res){
                                     }
                                     next();
                                 },100);
-                            })
-                            .then(function(next){
+                            })          //checked
+                                .then(function(next){
+                                  setTimeout(function(){
+                                   recoveryAuditoriaNULL(function(err,content){
+                                         if (err)
+                                             console.log(err)
+                                         else{
+                                             if (content != null){                                      
+                                                 if(dBemail == content[0].email){
+                                                     inside= "1";
+                                                     if (dBplaylist != regPlaylist){
+                                                 request(dirMusic+"changePlaylist?num="+regPlaylist, function(error, response, body) {});
+                                             }
+                                                  }
+                                             }
+                                         }
+                                      });
+                                    next();
+                                  },100);
+                            })          //inside
+                                .then(function(next){
                                 setTimeout(function(){
                                     res.render(appDir + '/perfilAdministrador.ejs', {  userName:dBnombre,
                                                                                  userSurname:dBapellido,
@@ -1015,64 +878,37 @@ app.post("/modPerfil",function (req,res){
                                 next();
                                 },100);
 
-                            });
-                        }
-
-
-                                }                
-                            });
+                            });         //render administrador
+                            }
+                        }                   
+                    });
                 }
             }else{
                 if (regEmail === content[0].email){ //Quiere decir que el usuario no cambio el email
                     updateUserDataBase(regNombre,regApellido,regEmail,regTemp,regLuz,dBid,regPlaylist);                  
                     sequence.then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                nombrePlaylist0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                cancionesPlayList2 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                nombrePlaylist2 = body;
-                            });    
-                            next();
-                        },100);
-                    })
+                                setTimeout(function(){
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        cancionesPlayList0 = body;
+                                    });
+                                     request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        nombrePlaylist0 = body;
+                                    });    
+                                     request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        cancionesPlayList1 = body;
+                                    });   
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        nombrePlaylist1 = body;
+                                    }); 
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        cancionesPlayList2 = body;
+                                    });    
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        nombrePlaylist2 = body;
+                                    });    
+                                    next();
+                                },100);
+                            })  //playlist
                     .then(function(next){
                         setTimeout(function(){
                             if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
@@ -1087,7 +923,26 @@ app.post("/modPerfil",function (req,res){
                             }
                             next();
                         },100);
-                    })
+                    })          //checked
+                    .then(function(next){
+                                  setTimeout(function(){
+                                   recoveryAuditoriaNULL(function(err,content){
+                                         if (err)
+                                             console.log(err)
+                                         else{
+                                             if (content != null){                                      
+                                                 if(regEmail == content[0].email){
+                                                     inside= "1";
+                                                     if (dBplaylist != regPlaylist){
+                                                 request(dirMusic+"changePlaylist?num="+regPlaylist, function(error, response, body) {});
+                                             }
+                                                  }
+                                             }
+                                         }
+                                      });
+                                    next();
+                                  },100);
+                            })          //inside
                     .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/perfilUsuario.ejs', {  userName:regNombre,
@@ -1109,12 +964,13 @@ app.post("/modPerfil",function (req,res){
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    });         //render del usuario
                     
                     
                 }else{
@@ -1124,55 +980,30 @@ app.post("/modPerfil",function (req,res){
                         }else{
                             if (content === null){ // no hay nadie con ese email
                                 updateUserDataBase(regNombre,regApellido,regEmail,regTemp,regLuz,dBid,regPlaylist);
-                        sequence.then(function(next){
-                            setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                nombrePlaylist0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                cancionesPlayList2 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                nombrePlaylist2 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
+                                sequence.then(function(next){
+                                setTimeout(function(){
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        cancionesPlayList0 = body;
+                                    });
+                                     request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        nombrePlaylist0 = body;
+                                    });    
+                                     request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        cancionesPlayList1 = body;
+                                    });   
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        nombrePlaylist1 = body;
+                                    }); 
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        cancionesPlayList2 = body;
+                                    });    
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        nombrePlaylist2 = body;
+                                    });    
+                                    next();
+                                },100);
+                            })      //playlist
+                                    .then(function(next){
                         setTimeout(function(){
                             if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
                                 checkCero = "checked="+true;
@@ -1186,9 +1017,28 @@ app.post("/modPerfil",function (req,res){
                             }
                             next();
                         },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
+                    })          //checked
+                                    .then(function(next){
+                                  setTimeout(function(){
+                                   recoveryAuditoriaNULL(function(err,content){
+                                         if (err)
+                                             console.log(err)
+                                         else{
+                                             if (content != null){                                      
+                                                 if(regEmail == content[0].email){
+                                                     inside= "1";
+                                                     if (dBplaylist != regPlaylist){
+                                                 request(dirMusic+"changePlaylist?num="+regPlaylist, function(error, response, body) {});
+                                             }
+                                                  }
+                                             }
+                                         }
+                                      });
+                                    next();
+                                  },100);
+                            })          //inside
+                                    .then(function(next){
+                                        setTimeout(function(){
                             res.render(appDir + '/perfilUsuario.ejs', {  userName:regNombre,
                                                                          userSurname:regApellido,
                                                                          userDNI:regDNI,
@@ -1208,85 +1058,79 @@ app.post("/modPerfil",function (req,res){
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    });         //render del usuario
                             }else{ //NO CAMBIO NINGUN CAMPO
+                                
                                 var dBemail = content[0].email;  
                                 var dBnombre = content[0].nombre;
                                 var dBapellido = content[0].apellido;
                                 var dBtemp = content[0].temp;
                                 var dBluz = content[0].luz;
                                 
-                                
-                                
-                                 sequence.then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                cancionesPlayList0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
-                                nombrePlaylist0 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                cancionesPlayList1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
-                                nombrePlaylist1 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                cancionesPlayList2 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                           request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
-                                nombrePlaylist2 = body;
-                            });    
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
-                        setTimeout(function(){
-                            if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
-                                checkCero = "checked="+true;
-                            }else{
-                                if (parseInt(regPlaylist,10) == parseInt(dbNumPlay1,10)){
-                                    checkUno =  "checked="+true;;
-                                }else{
-                                    if (parseInt(regPlaylist,10) == parseInt(dbNumPlay2,10))
-                                        checkDos =  "checked="+true;
-                                }
-                            }
-                            next();
-                        },100);
-                    })
-                    .then(function(next){
+                                sequence.then(function(next){
+                                setTimeout(function(){
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        cancionesPlayList0 = body;
+                                    });
+                                     request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay0, function(error, response, body) {
+                                        nombrePlaylist0 = body;
+                                    });    
+                                     request(dirMusic+"damePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        cancionesPlayList1 = body;
+                                    });   
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay1, function(error, response, body) {
+                                        nombrePlaylist1 = body;
+                                    }); 
+                                    request(dirMusic+"damePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        cancionesPlayList2 = body;
+                                    });    
+                                    request(dirMusic+"dameNombrePlaylist?num="+dbNumPlay2, function(error, response, body) {
+                                        nombrePlaylist2 = body;
+                                    });    
+                                    next();
+                                },100);
+                            })      //playlist
+                                .then(function(next){
+                                    setTimeout(function(){
+                                        if (parseInt(regPlaylist,10) == parseInt(dbNumPlay0,10)){
+                                            checkCero = "checked="+true;
+                                        }else{
+                                            if (parseInt(regPlaylist,10) == parseInt(dbNumPlay1,10)){
+                                                checkUno =  "checked="+true;;
+                                            }else{
+                                                if (parseInt(regPlaylist,10) == parseInt(dbNumPlay2,10))
+                                                    checkDos =  "checked="+true;
+                                            }
+                                        }
+                                        next();
+                                        },100);
+                                    })              //checked
+                                .then(function(next){
+                                  setTimeout(function(){
+                                   recoveryAuditoriaNULL(function(err,content){
+                                         if (err)
+                                             console.log(err)
+                                         else{
+                                             if (content != null){                                      
+                                                 if(dBemail == content[0].email){
+                                                     inside= "1";
+                                                     if (dBplaylist != regPlaylist){
+                                                 request(dirMusic+"changePlaylist?num="+regPlaylist, function(error, response, body) {});
+                                             }
+                                                  }
+                                             }
+                                         }
+                                      });
+                                    next();
+                                  },100);
+                            })              //inside
+                                .then(function(next){
                         setTimeout(function(){
                             res.render(appDir + '/perfilUsuario.ejs', {  userName:dBnombre,
                                                                          userSurname:dBapellido,
@@ -1307,12 +1151,13 @@ app.post("/modPerfil",function (req,res){
                                                                     indexPlaylist2:dbNumPlay2,
                                                                     checkCero:checkCero,
                                                                     checkUno:checkUno,
-                                                                    checkDos:checkDos   
+                                                                    checkDos:checkDos,
+                                                                    inside:inside
                                                                });    
                         next();
                         },100);
 
-                    });
+                    });             //render del usuario
                                 
                             }                        
                         }                
@@ -1393,76 +1238,73 @@ app.post("/cerrarSesion",function (req,res){
                     });
 });
 
+app.post("/musicSiguiente",function(req,res){
+    recoveryAuditoriaNULL(function(err,content){
+        if (err)
+            console.log(err)
+        else{
+            if (content != null){
+                    console.log("cambio siguiente");    
+                request(dirMusic+"changeMusicNext", function(error, response, body) {
+                });
+            }
+        }
+    });
+    res.end();
+});
+
+app.post("/musicAnterior",function(req,res){
+    recoveryAuditoriaNULL(function(err,content){
+        if (err)
+            console.log(err)
+        else{
+            if (content != null){
+                    console.log('cambio anterior ');
+                    request(dirMusic+"changeMusicBack", function(error, response, body) {
+                    });
+            }
+        }
+    });
+    res.end();
+});
+
+app.post("/musicPause",function(req,res){                        
+    recoveryAuditoriaNULL(function(err,content){
+        if (err)
+            console.log(err)
+        else{
+            if (content != null){
+                    console.log('pause music');
+                    request(dirMusic+"pauseMusic", function(error, response, body) {
+                    });
+            }
+        }
+    });
+    res.end();
+});
+
+app.post("/resumeMusic",function(req,res){
+    recoveryAuditoriaNULL(function(err,content){
+        if (err)
+            console.log(err)
+        else{
+            if (content != null){
+                    console.log('resume music');
+                    request(dirMusic+"resumeMusic", function(error, response, body) {
+                    });
+            }
+        }
+    });
+    res.end();
+});
+
+
  // serves all the static files 
 app.get(/^(.+)$/, function(req, res){ 
      console.log('static file request : ' + req.params);
      res.sendfile( appDir + req.params[0]); 
  });
  
-app.post("/musicSiguiente",function(req,res){
-    var regEmail = req.body.email;
-    recoveryAuditoriaNULL(function(err,content){
-        if (err)
-            console.log(err)
-        else{
-            if (content != null){
-                if (content[0].email == regEmail)
-                    request(dirMusic+"changeMusicNext", function(error, response, body) {
-                    });
-            }
-        }
-    });
-});
-
-app.post("/musicAnterior",function(req,res){
-    var regEmail = req.body.email;
-    recoveryAuditoriaNULL(function(err,content){
-        if (err)
-            console.log(err)
-        else{
-            if (content != null){
-                if (content[0].email == regEmail)
-                    request(dirMusic+"pauseMusic", function(error, response, body) {
-                    });
-            }
-        }
-    });
-});
-
-app.post("/musicPause",function(req,res){
-    var regEmail = req.body.email;
-    recoveryAuditoriaNULL(function(err,content){
-        if (err)
-            console.log(err)
-        else{
-            if (content != null){
-                if (content[0].email == regEmail)
-                    request(dirMusic+"changeMusicBack", function(error, response, body) {
-                    });
-            }
-        }
-    });
-});
-
-app.post("/resumeMusic",function(req,res){
-        var regEmail = req.body.email;
-    recoveryAuditoriaNULL(function(err,content){
-        if (err)
-            console.log(err)
-        else{
-            if (content != null){
-                if (content[0].email == regEmail)
-                    request(dirMusic+"resumeMusic", function(error, response, body) {
-                    });
-            }
-        }
-    });
-});
-
-
-
-
-
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
    console.log("Listening on " + port);
@@ -1473,7 +1315,7 @@ app.listen(port, function() {
 /*---------------------------Variables y funciones para la Base de Datos--------------*/
 
 
-var ipDataBase = '192.168.0.10'; 	// ip de la base de datos
+var ipDataBase = '192.168.0.9'; 	// ip de la base de datos
 var usrDataBase = 'milton';         // nombre de usuario
 var passDataBase = 'milton';        // contrasena
 var nameDataBase = 'tp2';           // nombre de la base de datos
@@ -1513,7 +1355,6 @@ function saveUserDataBase(nombre,apellido,dni,email,pass,temp,luz,playlist){
     connection.end();
 }
 
-
 function updateUserDataBase(nombre,apellido,email,temp,luz,id,playlist){
       var mysql      = require('mysql');
       var connection = mysql.createConnection({      
@@ -1534,7 +1375,6 @@ function updateUserDataBase(nombre,apellido,email,temp,luz,id,playlist){
     });
     connection.end();
 }
-
 
 function recoveryAllUsers(callback){
     
@@ -1577,7 +1417,6 @@ function recoveryAllUsers(callback){
 *
 */
 
-
 function recoveryUser(email,pass,callback){
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
@@ -1606,7 +1445,6 @@ function recoveryUser(email,pass,callback){
     
 }
 
-
 /*
 *   function: recoveryUserByEmail()
 *       ---> genera la conexion y consulta si un usuario se encuentran
@@ -1618,7 +1456,6 @@ function recoveryUser(email,pass,callback){
 *       --> null si no existe
 *
 */
-
 
 function recoveryUserByEmail (email,callback){
     var mysql      = require('mysql');
@@ -1687,8 +1524,7 @@ function fechaHoy(){
 *
 */
 
-function passwordRandom()
-{
+function passwordRandom(){
     var text = "";
     var possible = "0123456789";
 
@@ -1698,15 +1534,12 @@ function passwordRandom()
     return text;
 }
 
-
-
 /*
 *
 *
 *
 *
 */
-
 
 function saveAuditoriaDataBase (email){
     var hoy = new Date();
@@ -1766,7 +1599,6 @@ function recoveryAuditoriaNULL(callback){
     
 };
 
-
 function recoveryAllAuditoria (callback){
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
@@ -1823,8 +1655,6 @@ function updateAuditoriaDataBase(email){
     
     connection.end();  
 }
-
-
 
 /*---------------------------Variables y funciones para manipular Emails--------------*/
 
@@ -1993,7 +1823,6 @@ setInterval(function(){
       }
   }
 })},1000);
-
 
 var intervalSensores;
 function  simuladorSensores(temp,luz){

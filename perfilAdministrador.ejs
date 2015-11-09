@@ -17,11 +17,58 @@
             background-image: url("img/fondo.jpg");
             
         }   
+        
+        .navbar-center
+        {
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            margin-top:10px;
+            margin-left: 40%;
+        }
  
          a:hover {
           cursor:pointer;
          }
     </style>
+    
+    <script type="text/javascript" src="/javascript/prototype.js"></script>    
+    
+    <script>
+        function musicNext(){
+            new Ajax.Request('/musicSiguiente', {
+              method: 'post',
+            
+              });
+        }
+        
+        function musicBack(){
+            new Ajax.Request('/musicAnterior', {
+              method: 'post',
+            
+              });
+        }
+        
+        function musicResume(){
+            new Ajax.Request('/resumeMusic', {
+              method: 'post',
+            
+              });
+        }
+        
+        function musicPause(){
+            new Ajax.Request('/musicPause', {
+              method: 'post',
+            
+              });
+        }
+        
+        
+    </script>
+    
+    
+    
+    
     <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
 
 <title>Galileo</title>
@@ -34,50 +81,26 @@
         <a class="navbar-brand" style="color:white;">GALILEO</a>
     </div>
     <div class="collapse navbar-collapse" > 
-        <!--
-        <form  name="historico" action="/historico" class="navbar-form navbar-left" method="post" role="tag">                  -->
-            <!--<a onClick="historico.submit();" style="color:white;text-align:center;">Informacion</a>                        -->
-            <!--<div class="form-group">
-                <button id="historico" type="submit" class="btn btn-inverse">Informacion</button>    
-            </div>            
-        </form>        
-        
-        <form name="perfil" action="/perfil" class="navbar-form navbar-left" method="post" role="tag">       -->         
-            <!--<a onClick="perfil.submit();" style="color:white;text-align:center;">Perfil</a>            -->
-            <!--<div class="form-group">
-            </div>
-            <button id="perfil" type="submit" class="btn btn-inverse">Perfil</button>    
-
-        </form>             
-        
-        <form class="navbar-form navbar-right" role="tag" method="post" name="cerrarSesion"  action="/cerrarSesion">
-            <div class="form-group">
-            </div>
-            <button id="cerrarSesion" type="submit" class="btn btn-inverse">Cerrar sesión</button>    
-  		  </form>-->            
-        
-        <!--<form name="cerrarSesion" action="/cerrarSesion" method="post">
-          <ul class="nav navbar-nav navbar-right">       
-            <ul class="nav navbar-nav">     
-                <li><a onClick="cerrarSesion.submit();" style="color:white">Cerrar sesión</a></li>
-            </ul>            
-          </ul>
-        </form>                -->
-        <form  name="historico" action="/historico" class="navbar-form navbar-left" method="post" role="tag">                                
-            <!--<a onClick="historico.submit();" style="color:white;text-align:center;">Informacion</a>                        -->
+        <form  name="historico" action="/historico" class="navbar-form navbar-left" method="post" role="tag">                 
             <div class="form-group">
                 <button id="historico" type="submit" class="btn btn-inverse">Informacion</button>    
             </div>            
         </form>        
         
         <form name="perfil" action="/perfil" class="navbar-form navbar-left" method="post" role="tag">                
-            <!--<a onClick="perfil.submit();" style="color:white;text-align:center;">Perfil</a>            -->
             <div class="form-group">
             </div>
             <button id="perfil" type="submit" class="btn btn-inverse">Perfil</button>    
 
         </form>             
-        
+        <% if (inside == "1" ) { %>
+        <div class="navbar-center">
+           <input type='image' id="musicAnterior" onclick="musicBack();" src="/img/back.png" width="33" height="33"/> 
+           <input type='image' id="musicSiguiente" onclick="musicNext();" src="/img/foward.png" width="33" height="33"/> 
+           <input type='image' id="musicPause" src="/img/pause.png" onclick="musicPause();" width="33" height="33"/> 
+           <input type='image' id="resumeMusic" onclick="musicResume();" src="/img/play.png" width="33" height="33"/> 
+        </div>
+        <% } %>
         <form class="navbar-form navbar-right" role="tag" method="post" name="cerrarSesion"  action="/cerrarSesion">
             <div class="form-group">
             </div>

@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 
 var request = require("request");
 var portMusic = "8000";
-var ipMusic = "192.168.0.9";
+var ipMusic = "192.168.0.10";
 var dirMusic = "http://"+ipMusic+":"+portMusic+"/";
 
 var cancionesPlayList0 = "";
@@ -447,6 +447,7 @@ app.post("/log", function(req, res) {
 }); });
 
 app.post("/historico",function(req,res){
+    var inside="0";
     recoveryAllUsers(function(err,content){
         if (err)
             console.log(err)
@@ -461,15 +462,25 @@ app.post("/historico",function(req,res){
                 else{
                     var dataObjectAud = [];
                     var dataObjectAudHistorico = [];
+                    var usuarioActual="No hay usuarios en la habitacion";
                     for (var i=0; i < content.length; i++){  
                         //Historicos
                         if(content[i].fechaSalida != null){
-                dataObjectAudHistorico.push({email:content[i].email,fechaEntrada:content[i].fechaEntrada,fechaSalida:content[i].fechaSalida});  
+                            dataObjectAudHistorico.push({email:content[i].email
+                              ,fechaEntrada:content[i].fechaEntrada,
+                              fechaSalida:content[i].fechaSalida});  
                         }else{
-                        dataObjectAud.push({email:content[i].email,fechaEntrada:content[i].fechaEntrada});
+                            if (content[i].email == emailAdmin){
+                               inside="1";
+                            }
+                            usuarioActual="Usuario Actual: "+content[i].email+" - "+"Fecha Entrada: "+content[i].fechaEntrada;
+                            /*dataObjectAud.push({email:content[i].email,fechaEntrada:content[i].fechaEntrada});*/
                         }
                     }                    
-                    res.render(appDir + '/historicoAdministrador.ejs',{data:dataObject,dataAuditoriaHistorico:dataObjectAudHistorico,dataAuditoria:dataObjectAud});
+                    res.render(appDir + '/historicoAdministrador.ejs',{data:dataObject,
+                                                                       dataAuditoriaHistorico:dataObjectAudHistorico,
+                                                                       dataAuditoria:usuarioActual,
+                                                                       inside:inside});
                 }
             });            
         }
@@ -1298,7 +1309,20 @@ app.post("/resumeMusic",function(req,res){
     res.end();
 });
 
-
+app.post("/infoSong",function(req,res){
+    console.log('dame info cancion');
+    request(dirMusic+"dameNombreCancion", function(error, response, body) {
+            if (body.length > 50){
+                console.log(body.length);
+                var cancion = body.substring(0,50)+" ...";
+                res.end(cancion);
+            }else{
+                res.end(body);    
+            }
+            
+            
+    });
+});
  // serves all the static files 
 app.get(/^(.+)$/, function(req, res){ 
      console.log('static file request : ' + req.params);
@@ -1315,7 +1339,7 @@ app.listen(port, function() {
 /*---------------------------Variables y funciones para la Base de Datos--------------*/
 
 
-var ipDataBase = '192.168.0.9'; 	// ip de la base de datos
+var ipDataBase = '192.168.0.10'; 	// ip de la base de datos
 var usrDataBase = 'milton';         // nombre de usuario
 var passDataBase = 'milton';        // contrasena
 var nameDataBase = 'tp2';           // nombre de la base de datos
